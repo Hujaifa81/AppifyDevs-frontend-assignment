@@ -1,0 +1,514 @@
+{
+  "stats": [
+    {
+      "id": "7d",
+      "period": "7d",
+      "label": "Last 7 Days",
+      "kpis": {
+        "totalRevenue": {
+          "value": 12480,
+          "previousValue": 11200,
+          "changePercent": 11.4,
+          "trend": "up"
+        },
+        "totalUsers": {
+          "value": 284,
+          "previousValue": 310,
+          "changePercent": -8.4,
+          "trend": "down"
+        },
+        "orders": {
+          "value": 78,
+          "previousValue": 65,
+          "changePercent": 20.0,
+          "trend": "up"
+        },
+        "conversionRate": {
+          "value": 3.8,
+          "previousValue": 3.5,
+          "changePercent": 8.6,
+          "trend": "up"
+        }
+      }
+    },
+    {
+      "id": "30d",
+      "period": "30d",
+      "label": "Last 30 Days",
+      "kpis": {
+        "totalRevenue": {
+          "value": 54230,
+          "previousValue": 48900,
+          "changePercent": 10.9,
+          "trend": "up"
+        },
+        "totalUsers": {
+          "value": 1245,
+          "previousValue": 1180,
+          "changePercent": 5.5,
+          "trend": "up"
+        },
+        "orders": {
+          "value": 342,
+          "previousValue": 298,
+          "changePercent": 14.8,
+          "trend": "up"
+        },
+        "conversionRate": {
+          "value": 4.3,
+          "previousValue": 4.1,
+          "changePercent": 4.9,
+          "trend": "up"
+        }
+      }
+    },
+    {
+      "id": "12m",
+      "period": "12m",
+      "label": "Last 12 Months",
+      "kpis": {
+        "totalRevenue": {
+          "value": 648500,
+          "previousValue": 582100,
+          "changePercent": 11.4,
+          "trend": "up"
+        },
+        "totalUsers": {
+          "value": 14820,
+          "previousValue": 16200,
+          "changePercent": -8.5,
+          "trend": "down"
+        },
+        "orders": {
+          "value": 4125,
+          "previousValue": 3780,
+          "changePercent": 9.1,
+          "trend": "up"
+        },
+        "conversionRate": {
+          "value": 4.1,
+          "previousValue": 4.4,
+          "changePercent": -6.8,
+          "trend": "down"
+        }
+      }
+    }
+  ],
+  "revenue": [
+    {
+      "id": "rev-7d",
+      "period": "7d",
+      "userType": "all",
+      "data": [
+        { "label": "Mon", "revenue": 1620 },
+        { "label": "Tue", "revenue": 1840 },
+        { "label": "Wed", "revenue": 1580 },
+        { "label": "Thu", "revenue": 2100 },
+        { "label": "Fri", "revenue": 1920 },
+        { "label": "Sat", "revenue": 1750 },
+        { "label": "Sun", "revenue": 1670 }
+      ]
+    },
+    {
+      "id": "rev-7d-free",
+      "period": "7d",
+      "userType": "free",
+      "data": [
+        { "label": "Mon", "revenue": 320 },
+        { "label": "Tue", "revenue": 410 },
+        { "label": "Wed", "revenue": 280 },
+        { "label": "Thu", "revenue": 390 },
+        { "label": "Fri", "revenue": 350 },
+        { "label": "Sat", "revenue": 300 },
+        { "label": "Sun", "revenue": 270 }
+      ]
+    },
+    {
+      "id": "rev-7d-premium",
+      "period": "7d",
+      "userType": "premium",
+      "data": [
+        { "label": "Mon", "revenue": 820 },
+        { "label": "Tue", "revenue": 910 },
+        { "label": "Wed", "revenue": 780 },
+        { "label": "Thu", "revenue": 1050 },
+        { "label": "Fri", "revenue": 960 },
+        { "label": "Sat", "revenue": 890 },
+        { "label": "Sun", "revenue": 850 }
+      ]
+    },
+    {
+      "id": "rev-7d-enterprise",
+      "period": "7d",
+      "userType": "enterprise",
+      "data": [
+        { "label": "Mon", "revenue": 480 },
+        { "label": "Tue", "revenue": 520 },
+        { "label": "Wed", "revenue": 520 },
+        { "label": "Thu", "revenue": 660 },
+        { "label": "Fri", "revenue": 610 },
+        { "label": "Sat", "revenue": 560 },
+        { "label": "Sun", "revenue": 550 }
+      ]
+    },
+    {
+      "id": "rev-30d",
+      "period": "30d",
+      "userType": "all",
+      "data": [
+        { "label": "Week 1", "revenue": 12480 },
+        { "label": "Week 2", "revenue": 13200 },
+        { "label": "Week 3", "revenue": 14100 },
+        { "label": "Week 4", "revenue": 14450 }
+      ]
+    },
+    {
+      "id": "rev-30d-free",
+      "period": "30d",
+      "userType": "free",
+      "data": [
+        { "label": "Week 1", "revenue": 2100 },
+        { "label": "Week 2", "revenue": 2300 },
+        { "label": "Week 3", "revenue": 2500 },
+        { "label": "Week 4", "revenue": 2650 }
+      ]
+    },
+    {
+      "id": "rev-30d-premium",
+      "period": "30d",
+      "userType": "premium",
+      "data": [
+        { "label": "Week 1", "revenue": 6200 },
+        { "label": "Week 2", "revenue": 6500 },
+        { "label": "Week 3", "revenue": 7100 },
+        { "label": "Week 4", "revenue": 7300 }
+      ]
+    },
+    {
+      "id": "rev-30d-enterprise",
+      "period": "30d",
+      "userType": "enterprise",
+      "data": [
+        { "label": "Week 1", "revenue": 4180 },
+        { "label": "Week 2", "revenue": 4400 },
+        { "label": "Week 3", "revenue": 4500 },
+        { "label": "Week 4", "revenue": 4500 }
+      ]
+    },
+    {
+      "id": "rev-12m",
+      "period": "12m",
+      "userType": "all",
+      "data": [
+        { "label": "Jan", "revenue": 42000 },
+        { "label": "Feb", "revenue": 45200 },
+        { "label": "Mar", "revenue": 48100 },
+        { "label": "Apr", "revenue": 51300 },
+        { "label": "May", "revenue": 53800 },
+        { "label": "Jun", "revenue": 52100 },
+        { "label": "Jul", "revenue": 56400 },
+        { "label": "Aug", "revenue": 58200 },
+        { "label": "Sep", "revenue": 55700 },
+        { "label": "Oct", "revenue": 60100 },
+        { "label": "Nov", "revenue": 62300 },
+        { "label": "Dec", "revenue": 63300 }
+      ]
+    },
+    {
+      "id": "rev-12m-free",
+      "period": "12m",
+      "userType": "free",
+      "data": [
+        { "label": "Jan", "revenue": 7200 },
+        { "label": "Feb", "revenue": 7800 },
+        { "label": "Mar", "revenue": 8300 },
+        { "label": "Apr", "revenue": 8900 },
+        { "label": "May", "revenue": 9100 },
+        { "label": "Jun", "revenue": 8800 },
+        { "label": "Jul", "revenue": 9500 },
+        { "label": "Aug", "revenue": 9800 },
+        { "label": "Sep", "revenue": 9400 },
+        { "label": "Oct", "revenue": 10100 },
+        { "label": "Nov", "revenue": 10500 },
+        { "label": "Dec", "revenue": 10700 }
+      ]
+    },
+    {
+      "id": "rev-12m-premium",
+      "period": "12m",
+      "userType": "premium",
+      "data": [
+        { "label": "Jan", "revenue": 21000 },
+        { "label": "Feb", "revenue": 22500 },
+        { "label": "Mar", "revenue": 24000 },
+        { "label": "Apr", "revenue": 25600 },
+        { "label": "May", "revenue": 26800 },
+        { "label": "Jun", "revenue": 26000 },
+        { "label": "Jul", "revenue": 28200 },
+        { "label": "Aug", "revenue": 29100 },
+        { "label": "Sep", "revenue": 27800 },
+        { "label": "Oct", "revenue": 30000 },
+        { "label": "Nov", "revenue": 31100 },
+        { "label": "Dec", "revenue": 31600 }
+      ]
+    },
+    {
+      "id": "rev-12m-enterprise",
+      "period": "12m",
+      "userType": "enterprise",
+      "data": [
+        { "label": "Jan", "revenue": 13800 },
+        { "label": "Feb", "revenue": 14900 },
+        { "label": "Mar", "revenue": 15800 },
+        { "label": "Apr", "revenue": 16800 },
+        { "label": "May", "revenue": 17900 },
+        { "label": "Jun", "revenue": 17300 },
+        { "label": "Jul", "revenue": 18700 },
+        { "label": "Aug", "revenue": 19300 },
+        { "label": "Sep", "revenue": 18500 },
+        { "label": "Oct", "revenue": 20000 },
+        { "label": "Nov", "revenue": 20700 },
+        { "label": "Dec", "revenue": 21000 }
+      ]
+    }
+  ],
+  "orders": [
+    {
+      "id": "ord-7d",
+      "period": "7d",
+      "userType": "all",
+      "data": [
+        { "label": "Mon", "orders": 9 },
+        { "label": "Tue", "orders": 14 },
+        { "label": "Wed", "orders": 10 },
+        { "label": "Thu", "orders": 16 },
+        { "label": "Fri", "orders": 12 },
+        { "label": "Sat", "orders": 8 },
+        { "label": "Sun", "orders": 9 }
+      ]
+    },
+    {
+      "id": "ord-7d-free",
+      "period": "7d",
+      "userType": "free",
+      "data": [
+        { "label": "Mon", "orders": 3 },
+        { "label": "Tue", "orders": 5 },
+        { "label": "Wed", "orders": 4 },
+        { "label": "Thu", "orders": 6 },
+        { "label": "Fri", "orders": 4 },
+        { "label": "Sat", "orders": 2 },
+        { "label": "Sun", "orders": 3 }
+      ]
+    },
+    {
+      "id": "ord-7d-premium",
+      "period": "7d",
+      "userType": "premium",
+      "data": [
+        { "label": "Mon", "orders": 4 },
+        { "label": "Tue", "orders": 6 },
+        { "label": "Wed", "orders": 4 },
+        { "label": "Thu", "orders": 7 },
+        { "label": "Fri", "orders": 5 },
+        { "label": "Sat", "orders": 4 },
+        { "label": "Sun", "orders": 4 }
+      ]
+    },
+    {
+      "id": "ord-7d-enterprise",
+      "period": "7d",
+      "userType": "enterprise",
+      "data": [
+        { "label": "Mon", "orders": 2 },
+        { "label": "Tue", "orders": 3 },
+        { "label": "Wed", "orders": 2 },
+        { "label": "Thu", "orders": 3 },
+        { "label": "Fri", "orders": 3 },
+        { "label": "Sat", "orders": 2 },
+        { "label": "Sun", "orders": 2 }
+      ]
+    },
+    {
+      "id": "ord-30d",
+      "period": "30d",
+      "userType": "all",
+      "data": [
+        { "label": "Week 1", "orders": 78 },
+        { "label": "Week 2", "orders": 85 },
+        { "label": "Week 3", "orders": 92 },
+        { "label": "Week 4", "orders": 87 }
+      ]
+    },
+    {
+      "id": "ord-30d-free",
+      "period": "30d",
+      "userType": "free",
+      "data": [
+        { "label": "Week 1", "orders": 28 },
+        { "label": "Week 2", "orders": 32 },
+        { "label": "Week 3", "orders": 35 },
+        { "label": "Week 4", "orders": 30 }
+      ]
+    },
+    {
+      "id": "ord-30d-premium",
+      "period": "30d",
+      "userType": "premium",
+      "data": [
+        { "label": "Week 1", "orders": 34 },
+        { "label": "Week 2", "orders": 36 },
+        { "label": "Week 3", "orders": 38 },
+        { "label": "Week 4", "orders": 40 }
+      ]
+    },
+    {
+      "id": "ord-30d-enterprise",
+      "period": "30d",
+      "userType": "enterprise",
+      "data": [
+        { "label": "Week 1", "orders": 16 },
+        { "label": "Week 2", "orders": 17 },
+        { "label": "Week 3", "orders": 19 },
+        { "label": "Week 4", "orders": 17 }
+      ]
+    },
+    {
+      "id": "ord-12m",
+      "period": "12m",
+      "userType": "all",
+      "data": [
+        { "label": "Jan", "orders": 280 },
+        { "label": "Feb", "orders": 310 },
+        { "label": "Mar", "orders": 325 },
+        { "label": "Apr", "orders": 340 },
+        { "label": "May", "orders": 365 },
+        { "label": "Jun", "orders": 350 },
+        { "label": "Jul", "orders": 378 },
+        { "label": "Aug", "orders": 390 },
+        { "label": "Sep", "orders": 370 },
+        { "label": "Oct", "orders": 395 },
+        { "label": "Nov", "orders": 410 },
+        { "label": "Dec", "orders": 412 }
+      ]
+    },
+    {
+      "id": "ord-12m-free",
+      "period": "12m",
+      "userType": "free",
+      "data": [
+        { "label": "Jan", "orders": 100 },
+        { "label": "Feb", "orders": 112 },
+        { "label": "Mar", "orders": 118 },
+        { "label": "Apr", "orders": 125 },
+        { "label": "May", "orders": 132 },
+        { "label": "Jun", "orders": 128 },
+        { "label": "Jul", "orders": 138 },
+        { "label": "Aug", "orders": 140 },
+        { "label": "Sep", "orders": 135 },
+        { "label": "Oct", "orders": 145 },
+        { "label": "Nov", "orders": 150 },
+        { "label": "Dec", "orders": 148 }
+      ]
+    },
+    {
+      "id": "ord-12m-premium",
+      "period": "12m",
+      "userType": "premium",
+      "data": [
+        { "label": "Jan", "orders": 120 },
+        { "label": "Feb", "orders": 132 },
+        { "label": "Mar", "orders": 138 },
+        { "label": "Apr", "orders": 145 },
+        { "label": "May", "orders": 155 },
+        { "label": "Jun", "orders": 150 },
+        { "label": "Jul", "orders": 160 },
+        { "label": "Aug", "orders": 168 },
+        { "label": "Sep", "orders": 158 },
+        { "label": "Oct", "orders": 168 },
+        { "label": "Nov", "orders": 175 },
+        { "label": "Dec", "orders": 178 }
+      ]
+    },
+    {
+      "id": "ord-12m-enterprise",
+      "period": "12m",
+      "userType": "enterprise",
+      "data": [
+        { "label": "Jan", "orders": 60 },
+        { "label": "Feb", "orders": 66 },
+        { "label": "Mar", "orders": 69 },
+        { "label": "Apr", "orders": 70 },
+        { "label": "May", "orders": 78 },
+        { "label": "Jun", "orders": 72 },
+        { "label": "Jul", "orders": 80 },
+        { "label": "Aug", "orders": 82 },
+        { "label": "Sep", "orders": 77 },
+        { "label": "Oct", "orders": 82 },
+        { "label": "Nov", "orders": 85 },
+        { "label": "Dec", "orders": 86 }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": "dist-7d",
+      "period": "7d",
+      "distribution": [
+        { "segment": "Free", "count": 168, "color": "#6366f1" },
+        { "segment": "Premium", "count": 82, "color": "#f59e0b" },
+        { "segment": "Enterprise", "count": 34, "color": "#10b981" }
+      ]
+    },
+    {
+      "id": "dist-30d",
+      "period": "30d",
+      "distribution": [
+        { "segment": "Free", "count": 720, "color": "#6366f1" },
+        { "segment": "Premium", "count": 380, "color": "#f59e0b" },
+        { "segment": "Enterprise", "count": 145, "color": "#10b981" }
+      ]
+    },
+    {
+      "id": "dist-12m",
+      "period": "12m",
+      "distribution": [
+        { "segment": "Free", "count": 8500, "color": "#6366f1" },
+        { "segment": "Premium", "count": 4320, "color": "#f59e0b" },
+        { "segment": "Enterprise", "count": 2000, "color": "#10b981" }
+      ]
+    }
+  ],
+  "traffic": [
+    {
+      "id": "trf-7d",
+      "period": "7d",
+      "sources": [
+        { "source": "Organic", "visitors": 1240, "percentage": 42.5 },
+        { "source": "Paid", "visitors": 820, "percentage": 28.1 },
+        { "source": "Social", "visitors": 540, "percentage": 18.5 },
+        { "source": "Referral", "visitors": 318, "percentage": 10.9 }
+      ]
+    },
+    {
+      "id": "trf-30d",
+      "period": "30d",
+      "sources": [
+        { "source": "Organic", "visitors": 5480, "percentage": 44.2 },
+        { "source": "Paid", "visitors": 3200, "percentage": 25.8 },
+        { "source": "Social", "visitors": 2310, "percentage": 18.6 },
+        { "source": "Referral", "visitors": 1410, "percentage": 11.4 }
+      ]
+    },
+    {
+      "id": "trf-12m",
+      "period": "12m",
+      "sources": [
+        { "source": "Organic", "visitors": 62400, "percentage": 43.1 },
+        { "source": "Paid", "visitors": 38200, "percentage": 26.4 },
+        { "source": "Social", "visitors": 27800, "percentage": 19.2 },
+        { "source": "Referral", "visitors": 16400, "percentage": 11.3 }
+      ]
+    }
+  ]
+}
