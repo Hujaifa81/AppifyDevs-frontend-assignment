@@ -5,6 +5,9 @@ export type RouteConfig = {
     patterns: RegExp[],
 }
 
+export const authRoutes = ["/login", "/register", "/forgot-password"];
+
+
 export const commonProtectedRoutes: RouteConfig = {
     exact: ["/"],
     patterns: [],
@@ -20,6 +23,9 @@ export const adminProtectedRoutes: RouteConfig = {
     exact: [],
 }
 
+export const isAuthRoute = (pathname: string) => {
+    return authRoutes.some((route: string) => route === pathname);
+}
 
 export const isRouteMatches = (pathname: string, routes: RouteConfig): boolean => {
     if (routes.exact.includes(pathname)) {

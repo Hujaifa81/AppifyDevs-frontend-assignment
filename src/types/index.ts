@@ -1,2 +1,3 @@
 export type * from './route.type';
 export type * from './role.type';
+export type * from './user.type';

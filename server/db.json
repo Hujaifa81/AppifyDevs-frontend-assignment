@@ -510,5 +510,23 @@
         { "source": "Referral", "visitors": 16400, "percentage": 11.3 }
       ]
     }
+  ],
+  "profiles": [
+    {
+      "id": "admin",
+      "name": "John Admin",
+      "email": "admin@appifydevs.com",
+      "password": "admin123",
+      "role": "ADMIN",
+      "avatar": "/avatars/admin.png"
+    },
+    {
+      "id": "manager",
+      "name": "Sarah Manager",
+      "email": "manager@appifydevs.com",
+      "password": "manager123",
+      "role": "MANAGER",
+      "avatar": "/avatars/manager.png"
+    }
   ]
 }
