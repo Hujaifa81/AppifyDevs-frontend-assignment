@@ -28,7 +28,7 @@ const LoginForm = ({ redirect }: { redirect?: string }) => {
               //   required
             />
 
-            <InputFieldError field="email" state={null} />
+            <InputFieldError field="email" />
           </Field>
 
           {/* Password */}
@@ -41,7 +41,7 @@ const LoginForm = ({ redirect }: { redirect?: string }) => {
               placeholder="Enter your password"
               //   required
             />
-            <InputFieldError field="password" state={null} />
+            <InputFieldError field="password" />
           </Field>
         </div>
         <FieldGroup className="mt-4">

@@ -24,10 +24,11 @@ export const loginUser = async (formData: FormData): Promise<any> => {
             return validation;
         }
 
-        
+        const data = validation.data!;
+
         const { db } = require('../../app/api/_data');
 
-        const user = db.profiles.find((p: any) => p.email === validation.data.email && p.password === validation.data.password);
+        const user = db.profiles.find((p: any) => p.email === data.email && p.password === data.password);
         if (!user) {
             return { success: false, message: 'Invalid email or password' };
         }
