@@ -1,4 +1,3 @@
-// ─── User info type ─────────────────────────────────────────────────────────
 
 import { Role } from "@/types/role.type";
 

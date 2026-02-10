@@ -27,7 +27,6 @@ const initialAsyncState = <T>(): AsyncState<T> => ({
   error: null,
 });
 
-// ─── Dashboard State ────────────────────────────────────────────────────────
 
 export interface DashboardState {
   stats: AsyncState<Stats>;
@@ -131,10 +130,10 @@ export const {
 } = dashboardSlice.actions;
 
 
-export const fetchStats = (period: Period) => async (dispatch: AppDispatch) => {
+export const fetchStats = (period: Period, userType: any = 'all') => async (dispatch: AppDispatch) => {
   dispatch(setStatsLoading());
   try {
-    const data = await getStats(period);
+    const data = await getStats(period, userType);
     dispatch(setStatsData(data));
   } catch (error) {
     dispatch(setStatsError(error instanceof Error ? error.message : 'Failed to fetch stats'));

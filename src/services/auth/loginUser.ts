@@ -1,8 +1,7 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use server"
 
 import { getDefaultDashboardRoute, isValidRedirectForRole } from "@/lib/auth";
-import { serverFetch } from "@/lib/serverFetch";
+import { signToken } from '@/lib/token';
 import { COOKIE_NAME } from "@/lib/token";
 import { zodValidator } from "@/lib/zodValidator";
 import { Role } from "@/types";
@@ -11,7 +10,7 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
 
-export const loginUser = async (_currentState: any, formData: any): Promise<any> => {
+export const loginUser = async (formData: FormData): Promise<any> => {
     try {
         const redirectTo = formData.get('redirect') || null;
 
@@ -25,42 +24,26 @@ export const loginUser = async (_currentState: any, formData: any): Promise<any>
             return validation;
         }
 
-        const res = await serverFetch.post("/auth/login", {
-            body: JSON.stringify(validation.data),
-            headers: { "Content-Type": "application/json" },
+        
+        const { db } = require('../../app/api/_data');
+
+        const user = db.profiles.find((p: any) => p.email === validation.data.email && p.password === validation.data.password);
+        if (!user) {
+            return { success: false, message: 'Invalid email or password' };
+        }
+
+        const token = await signToken({ id: user.id, name: user.name, email: user.email, role: user.role });
+
+        const cookieStore = await cookies();
+        cookieStore.set(COOKIE_NAME, token, {
+            path: '/',
+            httpOnly: true,
+            maxAge: 60 * 60 * 24 * 7,
+            sameSite: 'lax',
         });
 
-        const result = await res.json();
+        const userRole: Role = user.role;
 
-        if (!result.success) {
-            return { success: false, message: result.message || "Login failed" };
-        }
-
-        // Extract access_token from Set-Cookie header and forward to browser
-        const setCookieHeaders = res.headers.getSetCookie();
-        if (setCookieHeaders?.length) {
-            for (const header of setCookieHeaders) {
-                if (header.startsWith(`${COOKIE_NAME}=`)) {
-                    // Extract token value (substring avoids splitting on '=' inside JWT)
-                    const tokenValue = header.substring(
-                        COOKIE_NAME.length + 1,
-                        header.indexOf(';')
-                    );
-                    const cookieStore = await cookies();
-                    cookieStore.set(COOKIE_NAME, tokenValue, {
-                        path: '/',
-                        httpOnly: true,
-                        maxAge: 60 * 60 * 24 * 7, // 7 days
-                        sameSite: 'lax',
-                    });
-                    break;
-                }
-            }
-        }
-
-        const userRole: Role = result.data.role;
-
-        // Redirect to the requested path if valid for this role
         if (redirectTo) {
             const requestedPath = redirectTo.toString();
             if (isValidRedirectForRole(requestedPath, userRole)) {
@@ -68,11 +51,9 @@ export const loginUser = async (_currentState: any, formData: any): Promise<any>
             }
         }
 
-        // Default: redirect to role's dashboard
         redirect(getDefaultDashboardRoute(userRole));
 
     } catch (error: any) {
-        // Re-throw NEXT_REDIRECT errors so Next.js can handle them
         if (error?.digest?.startsWith('NEXT_REDIRECT')) {
             throw error;
         }

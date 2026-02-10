@@ -14,7 +14,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Find user by email and password
     const user = db.profiles.find(
       (p) => p.email === email && p.password === password
     );
@@ -26,7 +25,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Create JWT access token
     const token = await signToken({
       id: user.id,
       name: user.name,
@@ -34,7 +32,6 @@ export async function POST(request: NextRequest) {
       role: user.role as 'ADMIN' | 'MANAGER',
     });
 
-    // Return success with user info + set cookie
     const response = NextResponse.json({
       success: true,
       message: 'Login successful',

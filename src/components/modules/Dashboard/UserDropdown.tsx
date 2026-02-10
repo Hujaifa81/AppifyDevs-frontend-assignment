@@ -48,12 +48,6 @@ const UserDropdown = ({ userInfo }: UserDropdownProps) => {
             Profile
           </Link>
         </DropdownMenuItem>
-        <DropdownMenuItem asChild>
-          <Link href={"/change-password"} className="cursor-pointer">
-            <Settings className="mr-2 h-4 w-4" />
-            Change Password
-          </Link>
-        </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem
           onClick={handleLogout}

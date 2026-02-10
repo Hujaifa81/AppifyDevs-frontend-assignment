@@ -1,36 +1,109 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AppifyDevs — Admin Analytics Dashboard
 
-## Getting Started
+Live demo: <REPLACE_WITH_LIVE_URL>
 
-First, run the development server:
+## Test accounts (seeded)
+- Admin
+	- Email: admin@appifydevs.com
+	- Password: admin123
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Manager
+	- Email: manager@appifydevs.com
+	- Password: manager123
+
+---
+
+## Quick Start (Local)
+
+1. Install dependencies
+
+```powershell
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Start the mock API server (json-server)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```powershell
+npm run server
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. Start Next.js in development (app + mock API)
 
-## Learn More
+```powershell
+npm run dev:full
+```
 
-To learn more about Next.js, take a look at the following resources:
+Open http://localhost:3000 and log in using the test accounts above. The mock API runs on http://localhost:4000 by default.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Available Scripts
+- `npm run dev` — Next.js dev server
+- `npm run server` — json-server mock API (server/db.json)
+- `npm run dev:full` — runs both `dev` and `server` concurrently
+- `npm run build` — build for production
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Tech Stack
+- Next.js (App Router) + TypeScript
+- Tailwind CSS
+- Recharts for charts
+- Redux Toolkit for state management
+- json-server for mock API
 
-## Deploy on Vercel
+## Project Features
+- Sidebar navigation (collapsible)
+- Top header with notifications and user dropdown
+- KPI section with 4 KPI cards (Revenue, Users, Orders, Conversion)
+- Line, Bar and Pie charts (Revenue, Orders, User Distribution)
+- Date-range and user-type filters
+- Responsive layout (mobile-first, sidebar collapses)
+- Skeleton loading states and error handling
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Extra / Bonus Features
+- **Theme toggle (Dark / Light):** A UI control is available in the header to switch between dark and light themes. The choice is persisted in localStorage and applied app-wide.
+- **Role-based dashboards:** The UI adapts for `ADMIN` and `MANAGER` roles. Seeded accounts (see Test accounts) demonstrate role-specific navigation and access to different dashboard views.
+- **Export CSV:** Dashboard data can be exported to CSV from KPI or chart panels via the export button (produces a timestamped CSV download of the visible dataset).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Data & Mock API
+This project uses `server/db.json` (json-server). Key endpoints:
+
+- `GET /api/stats` — KPI stats; supports `?period=7d|30d|12m` and `?userType=free|premium|enterprise|all`
+- `GET /api/revenue` — revenue time-series
+- `GET /api/orders` — orders time-series
+- `GET /api/users` — user distribution
+
+The API is started with `npm run server` and exposes `http://localhost:4000` by default.
+
+## Architecture & Decisions
+- App is organized under `src/` using feature folders (components, services, redux slices).
+- Server-side mock uses `server/index.js` which adds latency and dynamic stats filtering to emulate real-world API behavior.
+- `server/db.json` contains seeded KPI and profile data (including the Admin/Manager accounts above).
+- Client fetches are routed through a `serverFetch` helper and cache-control mitigations are in place for development.
+
+## Assumptions
+- No external authentication provider; auth is simulated via seeded profiles in `server/db.json` for the assignment.
+- Live deployment URL is not known; replace the `Live demo` link above after deploying to Vercel/Netlify.
+
+## Deploying
+- Build and deploy to Vercel (recommended) or Netlify. Ensure the mock API is reachable or replace the API with a hosted mock.
+
+## Environment Variables
+This project uses environment variables to control API endpoints and local server behavior.
+
+- `.env.local` (development)
+
+```dotenv
+NEXT_PUBLIC_API_URL=http://localhost:4000/api
+```
+
+- `.env.production` (production)
+
+```dotenv
+NEXT_PUBLIC_API_URL=/api
+```
+
+Key variables
+- `NEXT_PUBLIC_API_URL` — client-facing API base. Use `/api` when using Next.js API routes in the same deployment, otherwise set an absolute URL to an external API.
+- `PORT` — the mock server port (default `4000` in `server/index.js`).
+- `SIMULATE_ERRORS` — set to `true` to enable occasional simulated errors in the local json-server for testing.
+
+---
+AppifyDevs Team — Frontend Assignment

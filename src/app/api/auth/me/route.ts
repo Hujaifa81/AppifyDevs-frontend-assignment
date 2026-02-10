@@ -21,7 +21,6 @@ export async function GET(request: NextRequest) {
     );
   }
 
-  // Find full profile from db
   const user = db.profiles.find((p) => p.id === payload.id);
 
   if (!user) {
