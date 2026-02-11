@@ -1,6 +1,6 @@
 # AppifyDevs — Admin Analytics Dashboard
 
-Live demo: <REPLACE_WITH_LIVE_URL>
+Live demo: [Live Link](https://appify-devs-frontend-assignment.vercel.app)
 
 ## Test accounts (seeded)
 - Admin
@@ -80,10 +80,6 @@ The API is started with `npm run server` and exposes `http://localhost:4000` by 
 
 ## Assumptions
 - No external authentication provider; auth is simulated via seeded profiles in `server/db.json` for the assignment.
-- Live deployment URL is not known; replace the `Live demo` link above after deploying to Vercel/Netlify.
-
-## Deploying
-- Build and deploy to Vercel (recommended) or Netlify. Ensure the mock API is reachable or replace the API with a hosted mock.
 
 ## Environment Variables
 This project uses environment variables to control API endpoints and local server behavior.
